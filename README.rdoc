@@ -11,15 +11,9 @@ Dependencies:
 Get Going
 
 * On Command Line
-```
-bundle install
-```
-```
-rake db:migrate
-```
-```
-rails s
-```
+```bundle install```
+```rake db:migrate```
+```rails s```
 
 Admin Login
 
