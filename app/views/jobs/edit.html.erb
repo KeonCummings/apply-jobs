@@ -45,7 +45,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <%= link_to 'Admin', signin_path%>
+                        <%= link_to "Home", root_path%>
+                    </li>
+                    <li class="page-scroll">
+                        <%= link_to "Applicants", admin_path(@admin)%>
                     </li>
                 </ul>
             </div>
@@ -53,49 +56,27 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <!-- Header -->
-    <%@jobs.each do |j|%>
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-text">
-                        <span class="name"><%= j.name %></span>
-                        <hr class="star-light">
-                         <span class="skills">Acme Company</span>
-                          <%= link_to "More Info", job_path(j.id), class: "btn btn-primary"%>
-                      
-                         
-                    </div>
+<div class="container" id="contact">
+      <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Apply</h2>
+                    <hr class="star-primary">
                 </div>
             </div>
-        </div>
-    </header>
-    <%end%>
-
-
-
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright &copy; Jobs & Such 2015
-                    </div>
+        <div class="row">
+         <div class="col-lg-8 col-lg-offset-2">
+            <div class="row control-group">
+                <div class="col-xs-12 controls">
+                <%= form_for(@job) do |f| %>
+                    <%= f.label :name%>
+                    <%= f.text_field :name, class: "form-control", placeholder: "name" %>
+                    <%= f.label :description%>
+                    <%= f.text_area :description, size: "24x6", class: "form-control", placeholder: "description" %> 
+                    <%= f.submit "save" %>
+                <% end %>
                 </div>
             </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll visible-xs visible-sm">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
+         </div>
     </div>
-
-</body>
-
-</html>
+</div>
+      

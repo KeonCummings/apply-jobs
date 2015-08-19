@@ -45,7 +45,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <%= link_to 'Admin', signin_path%>
+                       <%= link_to "Applicants", admin_path(@admin)%>
                     </li>
                 </ul>
             </div>
@@ -64,9 +64,7 @@
                         <span class="name"><%= j.name %></span>
                         <hr class="star-light">
                          <span class="skills">Acme Company</span>
-                          <%= link_to "More Info", job_path(j.id), class: "btn btn-primary"%>
-                      
-                         
+                          <%= link_to "Edit Description", edit_job_path(j.id), class: "btn btn-primary"%>
                     </div>
                 </div>
             </div>

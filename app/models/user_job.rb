@@ -1,4 +1,4 @@
 class UserJob < ActiveRecord::Base
-  has_many :users
-  has_many :jobs
+  belongs_to :user
+  belongs_to :job
 end

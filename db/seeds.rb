@@ -9,3 +9,5 @@ require 'faker'
 50.times do
   Job.create(name: Faker::Company.bs, description: Faker::Lorem.paragraphs(5))
 end
+
+Admin.create(name: "foo", email: "foo@bar.com", password: "admin", password_confirmation: "admin")
